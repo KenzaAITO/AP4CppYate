@@ -48,13 +48,13 @@ void	ThermostatApp::Run()
 	/**<	 Nothing to do in the main task	*/
 //}
 //----------------------------------------------------------------------
-unsigned int ThermostatApp::getPtr(){ return } 
+unsigned int ThermostatApp::getPtr(){ return this->ptr;} 
 
-std::mutex ThermostatApp::getArrayMutex(); 
+std::mutex ThermostatApp::getArrayMutex(){return this->arrayMutex;} 
 
-float ThermostatApp::getConsigne();
+float ThermostatApp::getConsigne(){return this->consigne;}
 
-float ThermostatApp::getHysteresis();
+float ThermostatApp::getHysteresis(){return this->hysteresis;}
 
 //----------------------------------------------------------------------
 
