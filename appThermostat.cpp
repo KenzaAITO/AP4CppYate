@@ -8,12 +8,13 @@
 #include "appThermostat.hpp"
 #include "DummyCapteurTemp.hpp"
 
+
+ThermostatApp::ThermostatApp(Chaudiere* pChaudiere): pChaudiere(pChaudiere){}
 //----------------------------------------------------------------------
 void	ThermostatApp::Init()
 {
 	// Init chaudiere capteur temp
-    pChaudiere = std::make_shared<DummyChaudiere>();
-    pCapteur = std::make_shared<DummyCapteurTemp>();
+    pChaudiere = std::make_unique<DummyChaudiere>();
 
     // Vérif chaudiere pas nullptr, sinon lancez exception
     if (!pChaudiere) {
@@ -50,7 +51,7 @@ void	ThermostatApp::Run()
 //----------------------------------------------------------------------
 unsigned int ThermostatApp::getPtr(){ return this->ptr;} 
 
-std::mutex ThermostatApp::getArrayMutex(){return this->arrayMutex;} 
+std::mutex ThermostatApp::getArrayMutex(){}//return this->tabTemp;} 
 
 float ThermostatApp::getConsigne(){return this->consigne;}
 

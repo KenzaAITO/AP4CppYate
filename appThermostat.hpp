@@ -50,15 +50,17 @@ class	ThermostatApp: public Application{
 
 	private: //attribus
 		
-    	std::shared_ptr<DummyCapteurTemp> pCapteur;
-		//DummyCapteurTemp capteur{};
+    	
+		DummyCapteurTemp capteur{};
 
-		std::shared_ptr<DummyChaudiere> pChaudiere;
-		//Chaudiere *pChaudiere{nullptr} ; 
+	
+		Chaudiere *pChaudiere{nullptr} ; 
+		std::unique_ptr<Chaudiere> uniquePtrChaudiere(Chaudiere);
 		
-		std::array<float ,filterSize > tabTemp{} ; 
+		std::array<float ,filterSize> tabTemp{} ; 
 		unsigned int ptr{0} ; 
 		std::mutex arrayMutex ; 
+		
 		float consigne{defaultConsigne} ;
 		float hysteresis{defaultHysteresis} ; 
 		std::thread measureThread ; //suppose to be a jthread 

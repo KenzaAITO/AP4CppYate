@@ -16,7 +16,7 @@
 int main() {
 
     std::cout << "Program START " << std::endl;
-    
+    //std::scoped_lock lock(arrayMutex);//a voir ce que l'on en fait 
     std::cout << "BEGGIN TEST CHAUDIERE  \n" << std::endl;
 	DummyChaudiere maChaudieretest;
 
@@ -51,10 +51,9 @@ int main() {
         std::cerr << "Erreur capturée : Impossible d'avoir un getStatus !" << std::endl;
     }
     //allumer la chaudiere 
-    DummyChaudiere maChaudiere;
 
     try {
-        maChaudiere.setON();
+        maChaudieretest.setON();
     } catch (const BoilerAlreadyONexception& e) {
         std::cerr << "Erreur : La chaudière est déjà allumée !" << std::endl;
     }
@@ -79,7 +78,7 @@ int main() {
     std::cout << "La température deltaMax  est : " << deltaMax  << " °C" << std::endl;
 
     float prevTemp = monCapteurDefaultValue.getPrevTemp();
-    std::cout << "La température prevTemp  est : " << prevTemp  << " °C" << std::endl;
+    std::cout << "La température prevTemp  est : " << prevTemp  << " °C \n" << std::endl;
     
 
 
@@ -99,10 +98,20 @@ int main() {
     float prevTemp2 = monCapteurParamtest.getPrevTemp();
     std::cout << "La température prevTemp2  est : " << prevTemp2  << " °C" << std::endl;
     
-
-
-
     std::cout << "END TEST CAPTER  \n" << std::endl;
+
+    ThermostatApp appli(&maChaudieretest);
+
+    appli.getPtr(); 
+	appli.getArrayMutex(); 
+	appli.getConsigne() ;
+	appli.getHysteresis(); 
+    appli.getCapteur();
+    appli.getPChaudiere();
+    appli.getTabTemp();
+    appli.Init();
+    appli.Run();
+    
    /**
     * 
     * 
