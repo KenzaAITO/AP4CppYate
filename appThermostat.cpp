@@ -6,9 +6,7 @@
  * 
  */
 
-#include "appThermostat.hpp"
 #include "DummyCapteurTemp.hpp"
-
 
 //----------------------------------------------------------------------
 void	ThermostatApp::Init()
@@ -45,5 +43,18 @@ void	ThermostatApp::Run()
     }
 }
 //----------------------------------------------------------------------
+//void	ThermostatApp::Run(){
+	/**<	 Nothing to do in the main task	*/
+//}
+//----------------------------------------------------------------------
+unsigned int getPtr(); 
+
+		std::mutex getArrayMutex()
+		{return } 
+
+		float getConsigne()
+
+		float getHysteresis()
+
 //----------------------------------------------------------------------
 
