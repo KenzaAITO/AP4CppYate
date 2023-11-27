@@ -94,7 +94,7 @@ class DummyChaudiere : public Chaudiere{
 		* 
 		*/	
 		virtual void 	setOFF();
-	
+		
 };
 
 #endif//----------------------------------------------------------------------

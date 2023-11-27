@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/cecilia/Desktop/AP4CppYate",
+      "program": "/Users/cecilia/Desktop/AP4CppYate/build/Debug/outDebug"
+    }
+  ]
+}

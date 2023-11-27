@@ -10,10 +10,10 @@
 //----------------------------------------------------------------------
 void 	DummyChaudiere::setON(){
 	
-	if (getStatus() == Chaudiere::Status::ON) {
+	if(getStatus() == Chaudiere::Status::ON) {
         throw BoilerAlreadyONexception();
     }
-    std::cout << "DummyChaudiere est maintenant allumée." << std::endl;
+    std::cout << "DummyChaudiere est allumée." << std::endl;
     setStatus(Chaudiere::Status::ON);
 	
 	}
@@ -31,9 +31,10 @@ void 	DummyChaudiere::setOFF(){
 
 void	Chaudiere::setStatus(Status status) noexcept 
 {
-	printf("status: %d \n", status);
-	std::cout << "modification du status" << std::endl;
-	this->status = status;
-	printf("status: %d \n", status);
+
+	//Status stat; // Déclaration d'une variable de type Status
+    std::cout << "modification du status" << std::endl;
+    this->status = status;
+    printf("new Status %d \n", status);
 }
 

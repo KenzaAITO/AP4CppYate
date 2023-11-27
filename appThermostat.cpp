@@ -11,7 +11,8 @@
 
 
 //----------------------------------------------------------------------
-void	ThermostatApp::Init(){
+void	ThermostatApp::Init()
+{
 	// Init chaudiere capteur temp
     pChaudiere = std::make_shared<DummyChaudiere>();
     pCapteur = std::make_shared<DummyCapteurTemp>();
@@ -26,7 +27,8 @@ void	ThermostatApp::Init(){
 
 }
 //----------------------------------------------------------------------
-void	ThermostatApp::Run(){
+void	ThermostatApp::Run()
+{
 	// boucle principale
     while (shouldRun) { // shouldRun est une variable booléenne contrôlant la boucle
         float currentTemp = pCapteur->getTemp();
