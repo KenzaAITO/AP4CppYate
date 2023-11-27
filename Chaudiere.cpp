@@ -31,7 +31,6 @@ void 	DummyChaudiere::setOFF(){
 
 void	Chaudiere::setStatus(Status status) noexcept 
 {
-
 	//Status stat; // Déclaration d'une variable de type Status
     std::cout << "modification du status" << std::endl;
     this->status = status;

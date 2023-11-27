@@ -61,24 +61,24 @@ int main() {
 
     std::cout << "END TEST CHAUDIERE  \n" << std::endl;
     std::cout << "BEGGIN TEST CAPTER  \n" << std::endl;
-    DummyCapteurTemp monCapteurtest; // instance de DummyCapteurTemp
+    DummyCapteurTemp monCapteurDefaultValue; // instance de DummyCapteurTemp
     DummyCapteurTemp monCapteurParamtest(-20,35,4,12); // instance de DummyCapteurTemp
 
 
 // Test du capteur temp sans param
-    float temperature = monCapteurtest.getTemp(); // Temp simulée
+    float temperature = monCapteurDefaultValue.getTemp(); // Temp simulée
     std::cout << "La température actuelle est : " << temperature << " °C" << std::endl;
     
-    float Tmin = monCapteurtest.getTmin();
+    float Tmin = monCapteurDefaultValue.getTmin();
     std::cout << "La température MIN est : " << Tmin << " °C" << std::endl;
 
-    float Tmax = monCapteurtest.getTmax();
+    float Tmax = monCapteurDefaultValue.getTmax();
     std::cout << "La température MAX est : " << Tmax << " °C" << std::endl;
 
-    float deltaMax = monCapteurtest.getDeltaMax();
+    float deltaMax = monCapteurDefaultValue.getDeltaMax();
     std::cout << "La température deltaMax  est : " << deltaMax  << " °C" << std::endl;
 
-    float prevTemp = monCapteurtest.getPrevTemp();
+    float prevTemp = monCapteurDefaultValue.getPrevTemp();
     std::cout << "La température prevTemp  est : " << prevTemp  << " °C" << std::endl;
     
 

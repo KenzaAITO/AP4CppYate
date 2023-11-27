@@ -5,7 +5,7 @@
  * 	@date		
  * 
  */
-
+#include "appThermostat.hpp"
 #include "DummyCapteurTemp.hpp"
 
 //----------------------------------------------------------------------
@@ -27,6 +27,7 @@ void	ThermostatApp::Init()
 //----------------------------------------------------------------------
 void	ThermostatApp::Run()
 {
+    bool shouldRun = true ;
 	// boucle principale
     while (shouldRun) { // shouldRun est une variable booléenne contrôlant la boucle
         float currentTemp = pCapteur->getTemp();
@@ -47,14 +48,13 @@ void	ThermostatApp::Run()
 	/**<	 Nothing to do in the main task	*/
 //}
 //----------------------------------------------------------------------
-unsigned int getPtr(); 
+unsigned int ThermostatApp::getPtr(){ return } 
 
-		std::mutex getArrayMutex()
-		{return } 
+std::mutex ThermostatApp::getArrayMutex(); 
 
-		float getConsigne()
+float ThermostatApp::getConsigne();
 
-		float getHysteresis()
+float ThermostatApp::getHysteresis();
 
 //----------------------------------------------------------------------
 
