@@ -3,7 +3,7 @@
 #include <ctime> 
 
 DummyCapteurTemp::DummyCapteurTemp(int16_t Tmin, int16_t Tmax, uint16_t DeltaMax, int16_t prevTemp)
-                : Tmin(defaultTmin), Tmax(defaultTmax), DeltaMax(defaultDeltaMax), prevTemp(defaultStartTemp){}       
+                : Tmin(Tmin), Tmax(Tmax), DeltaMax(DeltaMax), prevTemp(prevTemp){}       
 
 
 float DummyCapteurTemp::getTemp() {

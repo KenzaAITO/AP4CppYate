@@ -1,0 +1,3 @@
+/Users/cecilia/Desktop/AP4CppYate/CMakeFiles/thermostat.dir
+/Users/cecilia/Desktop/AP4CppYate/CMakeFiles/edit_cache.dir
+/Users/cecilia/Desktop/AP4CppYate/CMakeFiles/rebuild_cache.dir

@@ -35,6 +35,7 @@ void	Chaudiere::setStatus(Status status) noexcept
 	//Status stat; // Déclaration d'une variable de type Status
     std::cout << "modification du status" << std::endl;
     this->status = status;
-    printf("new Status %d \n", status);
+    std::string nom_status = this->status == Status::OFF ? "OFF" : "ON";
+    printf("new Status %s \n", nom_status.c_str());
 }
 
