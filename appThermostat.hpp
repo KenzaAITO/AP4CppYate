@@ -54,9 +54,8 @@ class	ThermostatApp: public Application{
 		DummyCapteurTemp capteur{};
 
 	
-		Chaudiere *pChaudiere{nullptr} ; 
-		std::unique_ptr<Chaudiere> uniquePtrChaudiere(Chaudiere);
-		
+		//Chaudiere *pChaudiere{nullptr} ; 
+		std::unique_ptr<Chaudiere> pChaudiere;
 		std::array<float ,filterSize> tabTemp{} ; 
 		unsigned int ptr{0} ; 
 		std::mutex arrayMutex ; 
@@ -100,10 +99,10 @@ class	ThermostatApp: public Application{
 	//accessor
 
 		DummyCapteurTemp getCapteur();
-		Chaudiere *getPChaudiere();
+		std::unique_ptr<Chaudiere>& getPChaudiere();
 		std::array<float, filterSize> getTabTemp(); 
 		unsigned int getPtr(); 
-		std::mutex getArrayMutex(); 
+		std::mutex& getArrayMutex(); 
 		float getConsigne() ;
 		float getHysteresis(); 
 

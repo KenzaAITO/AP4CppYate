@@ -31,7 +31,7 @@ void	ThermostatApp::Run()
     bool shouldRun = true ;
 	// boucle principale
     while (shouldRun) { // shouldRun est une variable booléenne contrôlant la boucle
-        float currentTemp = pCapteur->getTemp();
+        float currentTemp = capteur.getTemp();
         std::cout << "Température actuelle : " << currentTemp << " °C" << std::endl;
 
         if (currentTemp < consigne) {
@@ -49,13 +49,24 @@ void	ThermostatApp::Run()
 	/**<	 Nothing to do in the main task	*/
 //}
 //----------------------------------------------------------------------
+DummyCapteurTemp ThermostatApp::getCapteur(){return this->capteur;}
+		
+std::unique_ptr<Chaudiere>& ThermostatApp::getPChaudiere(){return pChaudiere;}
+		
+std::array<float, filterSize> ThermostatApp::getTabTemp(){ return this->tabTemp;}
+        
 unsigned int ThermostatApp::getPtr(){ return this->ptr;} 
 
-std::mutex ThermostatApp::getArrayMutex(){}//return this->tabTemp;} 
+std::mutex& ThermostatApp::getArrayMutex()
+{
+    return arrayMutex;
+} 
 
 float ThermostatApp::getConsigne(){return this->consigne;}
 
 float ThermostatApp::getHysteresis(){return this->hysteresis;}
 
+
+		
 //----------------------------------------------------------------------
 
